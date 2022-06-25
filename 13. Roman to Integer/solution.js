@@ -11,11 +11,13 @@ var romanToInt = function (s) {
   let result = 0;
 
   for (let i = 0; i < s.length; i++) {
-    if (romanSymbols[s[i + 1] > romanSymbols[s[i]]]) {
+    if (romanSymbols[s[i + 1]] > romanSymbols[s[i]]) {
       result += romanSymbols[s[i + 1]] - romanSymbols[s[i]];
+      i++;
     } else {
       result += romanSymbols[s[i]];
     }
   }
   return result;
 };
+//
